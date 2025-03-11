@@ -1,8 +1,20 @@
+@import "tailwindcss";
+
 :root {
- 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  
 }
 
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #1f2937;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.leaflet-popup-tip {
+  background-color: #1f2937;
+}
