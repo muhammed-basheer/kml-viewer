@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tmcw/togeojson": "^7.0.0",
+    "bootstrap": "^5.3.3",
+    "leaflet": "^1.9.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-leaflet": "^5.0.0",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

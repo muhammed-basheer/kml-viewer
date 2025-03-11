@@ -1,16 +1,13 @@
-import { useState } from 'react'
-
-import './App.css'
+import React from "react";
+import FileUploader from "../src/components/FileUploader";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-       
-      <div>helo</div>
-    </>
-  )
+    <div>
+      <h1>KML Viewer</h1>
+      <FileUploader />
+    </div>
+  );
 }
 
-export default App
+export default App;
