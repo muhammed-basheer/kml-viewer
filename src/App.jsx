@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FileUploader from "./components/FileUploader";
 import SummaryView from "./components/SummaryView";
 import DetailedView from "./components/DetailedView";
+import MapView from "./components/MapView";
 
 function App() {
   const [geoJson, setGeoJson] = useState(null);
@@ -12,7 +13,7 @@ function App() {
 
   const [showSummary, setShowSummary] = useState(false);
   const [showDetailed, setShowDetailed] = useState(false);
-
+  const [showMap, setShowMap] = useState(false);
   return (
     <div>
       <h1>KML Viewer</h1>
@@ -23,12 +24,14 @@ function App() {
         <>
           <button onClick={() => setShowSummary(true)}>Summary</button>
           <button onClick={() => setShowDetailed(true)}>Detailed</button>
+          <button onClick={() => setShowMap(true)}>Show Map</button> 
         </>
       )}
 
       {showSummary && <SummaryView summary={summary} />}
 
       {showDetailed && <DetailedView details={details} />}
+      {showMap && <MapView geoJson={geoJson} />}
     </div>
   );
 }
