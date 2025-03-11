@@ -1,7 +1,7 @@
 import React from 'react'
-import { parseKML } from './KmlProcess';
+import { parseKML,getSummary,generateDetails } from './KmlProcess';
 
-const FileUploader = ({onFileUpload}) => {
+const FileUploader = ({setGeoJson,setSummary, setDetails}) => {
   const handleFileChange = (e)=>{
     const file = e.target.files[0];
     if(!file)return;
@@ -10,8 +10,16 @@ const FileUploader = ({onFileUpload}) => {
     reader.onload = (e)=>{
       const fileContent = e.target.result;
       const geoJson = parseKML(fileContent)
-      console.log("geoJson////",geoJson);
-      onFileUpload(geoJson); 
+      console.log("Parsed GeoJSON:", geoJson);
+
+      setGeoJson(geoJson)
+     const summaryData = getSummary(geoJson);
+     console.log("Summary Data:", summaryData);
+
+      setSummary(summaryData)
+      const detailsData = generateDetails(geoJson);
+      console.log("Generated Details///////:", detailsData); 
+      setDetails(detailsData);
     }
     reader.readAsText(file);
   }
